@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Baloo";
+    src: url('assets/Baloo-Regular.ttf');
+  }
+body, html {
+    font-family: Baloo;
+    font-size: 24px;
+    min-width: 320px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.logo{
+
+}
+.logo:hover {
+    
+}
+
+* {
+    color: #C8FF00;
+}
+
+.navbar li{
+    display: inline-block;
+    letter-spacing: 6px;
+    font-size: 24px;
+    margin: 4px;
+}
+
+.navbar ul{
+    text-align: center;
+}
+
+.navbar a {
+    border-style: solid;
+    padding: 0 24px;
+    padding-left: calc(4px + 24px);
+    text-decoration: none;
+    border-radius: 24px;
+    transition: all 0.125s ease-out;
+}
+
+.navbar a:hover {
+    font-size: 26px;
+    transition: all 0.125s ease-in;
+}
+
+.roundALL {
+    border-radius: 5px;
+}
+
+.roundL {
+    border-radius: 5px 0 0 5px;
+}
+
+.roundR {
+    border-radius: 0 5px 5px 0;
+}
+
+.roundT {
+    border-radius: 5px 5px 0 0;
+}
+
+.roundB {
+    border-radius: 0 0 5px 5px;
+}
+
+.roundBR {
+    border-radius: 0 0 5px 0;
+}
+
+.roundBL {
+    border-radius: 0 0 0 5px;
+}
+
+.roundTR {
+    border-radius: 0 5px 0 0;
+}
+.roundTL {
+    border-radius: 5px 0 0 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ececec;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #717171;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #717171;
+    border-radius: 2px;
+}
+
+section {
+    height: calc(100% - 38px);
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: opacity 0.40s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.40s; 
+}
+
+        a[id="about"]:target ~ #about,
+        a[id="links"]:target ~ #links,
+        a[id="music"]:target ~ #music,
+        a[id="edt"]:target ~ #edt {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
+        }
