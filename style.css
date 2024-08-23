@@ -12,7 +12,9 @@ body, html {
 }
 
 .logo{
-
+    display: block;
+    margin: auto;    
+    width: 50%;
 }
 .logo:hover {
     
@@ -103,14 +105,15 @@ section {
     opacity: 0;
     visibility: hidden;
     overflow-y: auto;
-    transition: opacity 0.40s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.40s; 
+    transition: opacity 0.10s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.10s; 
 }
 
-        a[id="about"]:target ~ #about,
-        a[id="links"]:target ~ #links,
-        a[id="music"]:target ~ #music,
-        a[id="edt"]:target ~ #edt {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
-        }
+a[id="start"]:target ~ #start,
+a[id="about"]:target ~ #about,
+a[id="links"]:target ~ #links,
+a[id="music"]:target ~ #music,
+a[id="edt"]:target ~ #edt {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
+}
