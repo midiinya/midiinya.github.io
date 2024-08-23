@@ -5,4 +5,3 @@ document.addEventListener("DOMContentLoaded", () => {
     const defaultSection = document.querySelector(hash);
     defaultSection?.scrollIntoView();
 });
-
