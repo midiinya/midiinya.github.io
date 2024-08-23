@@ -12,12 +12,19 @@ body, html {
 }
 
 .logo{
-    display: block;
-    margin: auto;    
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
     width: 50%;
+    transition: all 0.5s ease-out;
 }
 .logo:hover {
-    
+    width: 51.5%;
+        transition: all 0.35s ease-in;
+
 }
 
 * {
