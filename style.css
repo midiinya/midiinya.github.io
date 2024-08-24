@@ -86,7 +86,7 @@ body, html {
 }
 
 section {
-    height: calc(100% - 38px);
+    height: calc(100% - 65%);
     width: 100vw;
     position: absolute;
     opacity: 0;
@@ -132,6 +132,18 @@ a[id="edt"]:target ~ #edt {
     }
 }
 
+@media screen and (max-width: 768px) {
+
+    .midii {
+        font-size: 4.3vh;
+    }
+
+    .navbar li {
+        font-size: 1.75rem;
+        margin: 0.25rem 0.25rem;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .logo {
         width: 53vw;
@@ -142,6 +154,9 @@ a[id="edt"]:target ~ #edt {
     }
 
     .navbar a {
+        padding: 0;
+        width: 70vw;
+        display: table
         border-radius: 1.5em;
     }
 }
