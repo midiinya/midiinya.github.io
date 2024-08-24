@@ -15,4 +15,16 @@ function hideStartHash() {
   window.addEventListener("load", hideStartHash);
   
   window.addEventListener("hashchange", hideStartHash);
-  
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var logo = document.querySelector(".logo");
+    var audioPlayer = document.getElementById("audioPlayer");
+    var hasPlayed = false;
+
+    logo.addEventListener("click", function() {
+        if (!hasPlayed) {
+            audioPlayer.play();
+            hasPlayed = true;
+        }
+    });
+});

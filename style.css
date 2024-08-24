@@ -86,6 +86,12 @@ body, html {
     transition: all 0.125s ease-in;
 }
 
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
 .roundALL { border-radius: 1.5em; }
 .roundL { border-radius: 1.5em 0 0 1.5em; }
 .roundR { border-radius: 0 1.5em 1.5em 0; }
@@ -119,7 +125,8 @@ a[id="start"]:target ~ #start,
 a[id="about"]:target ~ #about,
 a[id="links"]:target ~ #links,
 a[id="music"]:target ~ #music,
-a[id="edt"]:target ~ #edt {
+a[id="edt"]:target ~ #edt,
+a[id="what"]:target ~ #what {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
