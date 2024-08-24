@@ -38,6 +38,26 @@ body, html {
     margin: 1.5vh;
 }
 
+.button1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.button1 a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0.3125rem;
+    border-style: solid;
+    border-radius: 2em;
+}
+
+.button1 a:hover{
+    transform: scale(1.05);
+    transition: all 0.125s ease-in;
+}
+
 .navbar {
     text-align: center;
     margin: 0;
@@ -77,6 +97,7 @@ body, html {
 
 ::-webkit-scrollbar {
     width: 6px;
+    background-color: #000;
 }
 
 ::-webkit-scrollbar-thumb {
