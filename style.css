@@ -9,7 +9,6 @@ body, html {
     margin: 0;
     min-width: 16svw;
     height: 100vh;
-    overflow: hidden;
     background-color: #000;
 }
 
@@ -86,7 +85,7 @@ body, html {
 }
 
 section {
-    height: calc(100% - 65%);
+    height: 100%;
     width: 100vw;
     position: absolute;
     opacity: 0;
