@@ -5,7 +5,7 @@
 
 body, html {
     font-family: "Baloo";
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
     overflow: hidden;
     min-width: 16svw;
@@ -34,7 +34,7 @@ body, html {
 }
 .midii {
     letter-spacing: 4px;
-    font-size: 4vh; 
+    font-size: 5.5vh; 
     text-align: center; 
     margin: 1.5vh;
 }
@@ -68,7 +68,7 @@ body, html {
 .navbar li {
     display: inline-block;
     letter-spacing: 0.175em;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 0.3125rem;
 }
 
@@ -84,12 +84,6 @@ body, html {
 .navbar a:hover {
     transform: scale(1.05);
     transition: all 0.125s ease-in;
-}
-
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-    display: none;
 }
 
 .roundALL { border-radius: 1.5em; }
@@ -130,6 +124,25 @@ a[id="what"]:target ~ #what {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
+}
+
+@media screen and (max-width: 1760px) {
+    body, html {
+        font-size: 1.05rem;
+    }
+
+    .midii {
+        font-size: 4vh;
+    }
+
+    .navbar li {
+        font-size: 1.5rem;
+        margin: 0 0.3125rem;
+    }
+
+    .navbar a {
+        border-radius: 2em;
+    }
 }
 
 @media screen and (max-width: 920px) {
