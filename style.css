@@ -7,11 +7,14 @@ body, html {
     font-family: "Baloo";
     font-size: 1.2rem;
     margin: 0;
-    overflow: hidden;
-    min-width: 16svw;
-    height: 100vh;
     background-color: #000;
 }
+
+div {padding: 0 11vw;}
+
+* {color: #C8FF00;}
+
+#bear5 * {color: #0081DE;}
 
 .logo {
     position: absolute;
@@ -29,85 +32,59 @@ body, html {
     transition: all 0.3s ease-in;
 }
 
-* {
-    color: #C8FF00;
-}
 .midii {
-    letter-spacing: 4px;
-    font-size: 5.5vh; 
-    text-align: center; 
-    margin: 1.5vh;
+    letter-spacing: 3.5px;
+    font-size: 5.5vh;
+    text-align: center;
+    margin: 1.2vh;
 }
 
-.button1 {
+.button1, .button2, .navbar {
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-.button1 a {
+.button1 a, .button2 a, .navbar a {
     text-decoration: none;
     display: inline-block;
-    font-size: 1.5rem;
-    margin: 0.3125rem;
-    border-style: solid;
+    margin: 0.22rem;
+    border: solid 3px;
     border-radius: 2em;
-}
-
-.button1 a:hover{
-    transform: scale(1.05);
     transition: all 0.125s ease-in;
 }
 
-.navbar {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.button1 a:hover, .button2 a:hover, .navbar a:hover {
+    transform: scale(1.05);
 }
 
-.navbar li {
-    display: inline-block;
-    letter-spacing: 0.175em;
-    font-size: 2rem;
-    margin: 0 0.3125rem;
+.button1 a {font-size: 1.5rem;}
+
+.button2 a {
+    background-color: #C8FF00;
+    font-size: 1.5rem;
+    border: none;
+    color: #000
 }
+
+.navbar li {font-size: 2rem;}
 
 .navbar a {
-    border: solid 3px;
-    padding: 0 20px 0 25px;
-    text-decoration: none;
-    border-radius: 2em;
-    transition: all 0.125s ease-out;
-    display: inline-block;
+    letter-spacing: 0.18em;
+    padding: 0 22px 0 27px;
 }
 
-.navbar a:hover {
-    transform: scale(1.05);
-    transition: all 0.125s ease-in;
-}
-
-.roundALL { border-radius: 1.5em; }
-.roundL { border-radius: 1.5em 0 0 1.5em; }
-.roundR { border-radius: 0 1.5em 1.5em 0; }
-.roundT { border-radius: 1.5em 1.5em 0 0; }
-.roundB { border-radius: 0 0 1.5em 1.5em; }
-.roundBR { border-radius: 0 0 1.5em 0; }
-.roundBL { border-radius: 0 0 0 1.5em; }
-.roundTR { border-radius: 0 1.5em 0 0; }
-.roundTL { border-radius: 1.5em 0 0 0; }
+.covers {height: 250px;}
 
 ::-webkit-scrollbar {
     width: 6px;
     background-color: #000;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #C8FF00;
-    border-radius: 2px;
-}
+::-webkit-scrollbar-thumb {border-radius: 2px;}
 
 section {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     position: absolute;
     opacity: 0;
@@ -120,82 +97,53 @@ a[id="about"]:target ~ #about,
 a[id="links"]:target ~ #links,
 a[id="music"]:target ~ #music,
 a[id="edt"]:target ~ #edt,
-a[id="what"]:target ~ #what {
+a[id="what"]:target ~ #what,
+a[id="bear5"]:target ~ #bear5,
+a[id="merch"]:target ~ #merch {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
 }
 
 @media screen and (max-width: 1760px) {
-    body, html {
-        font-size: 1.05rem;
-    }
+    body, html {font-size: 1.05rem;}
 
-    .midii {
-        font-size: 4vh;
-    }
+    .midii {font-size: 3.8vh;}
 
-    .navbar li {
-        font-size: 1.5rem;
-        margin: 0 0.3125rem;
-    }
-
-    .navbar a {
-        border-radius: 2em;
-    }
+    .navbar li {font-size: 1.5125rem;}
 }
 
-@media screen and (max-width: 920px) {
-    body, html {
-        font-size: 0.925rem;
-    }
+@media screen and (max-width: 980px) {
+    body, html {font-size: 0.9rem;}
 
-    .logo {
-        width: 40vw;
-    }
+    .logo {width: 40vw;}
 
-    .logo:hover {
-        width: 42vw;
-    }
+    .logo:hover {width: 42vw;}
 
-    .midii {
-        font-size: 3.5vh;
-    }
+    .midii {font-size: 3.2vh;}
 
     .navbar li {
-        font-size: 1.5rem;
-        margin: 0.25rem 0.25rem;
+        margin: 0.3rem;
+        font-size: 1.4rem;
     }
 
-    .navbar a {
-        border-radius: 1.5em;
-    }
+    .navbar a {border-radius: 1.5em;}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 736px) {
+    .midii {font-size: 4.3vh;}
 
-    .midii {
-        font-size: 4.3vh;
-    }
-
-    .navbar li {
-        font-size: 1.7rem;
-    }
+    .navbar li {font-size: 1.7rem;}
 }
 
 @media screen and (max-width: 480px) {
-    .logo {
-        width: 53vw;
-    }
+    .logo {width: 53vw;}
 
-    .logo:hover {
-        width: 54.5vw;
-    }
+    .logo:hover {width: 54.5vw;}
 
     .navbar a {
         padding: 0;
         width: 70vw;
-        display: table
         border-radius: 1.5em;
     }
 }
