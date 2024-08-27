@@ -67,10 +67,8 @@ div {padding: 0 11vw;}
     border: none;
     color: #000
 }
-
-.navbar li {font-size: 2rem;}
-
 .navbar a {
+    font-size: 1.5rem;
     letter-spacing: 0.18em;
     padding: 0 22px 0 27px;
 }
@@ -110,7 +108,7 @@ a[id="merch"]:target ~ #merch {
 
     .midii {font-size: 3.8vh;}
 
-    .navbar li {font-size: 1.5125rem;}
+    .navbar a {font-size: 1.5125rem;}
 }
 
 @media screen and (max-width: 980px) {
@@ -122,18 +120,17 @@ a[id="merch"]:target ~ #merch {
 
     .midii {font-size: 3.2vh;}
 
-    .navbar li {
+    .navbar a {
         margin: 0.3rem;
         font-size: 1.4rem;
+        border-radius: 1em;
     }
-
-    .navbar a {border-radius: 1.5em;}
 }
 
 @media screen and (max-width: 736px) {
     .midii {font-size: 4.3vh;}
 
-    .navbar li {font-size: 1.7rem;}
+    .navbar a {font-size: 1.7rem;}
 }
 
 @media screen and (max-width: 480px) {
