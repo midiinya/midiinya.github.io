@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Baloo";
     src: url('assets/Baloo-Regular.ttf');
+    font-display: swap;
 }
 
 body, html {
