@@ -97,7 +97,6 @@ a[id="about"]:target ~ #about,
 a[id="links"]:target ~ #links,
 a[id="music"]:target ~ #music,
 a[id="edt"]:target ~ #edt,
-a[id="what"]:target ~ #what,
 a[id="bear5"]:target ~ #bear5,
 a[id="merch"]:target ~ #merch {
     opacity: 1;
