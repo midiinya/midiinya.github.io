@@ -34,10 +34,10 @@ div {padding: 0 11vw;}
 }
 
 .midii {
-    letter-spacing: 3.5px;
-    font-size: 5.5vh;
+    letter-spacing: 0.6vh;
+    font-size: 5.2vh;
     text-align: center;
-    margin: 1.2vh;
+    margin:  4vh 0 1vh;
 }
 
 .button1, .button2, .navbar {
@@ -49,7 +49,7 @@ div {padding: 0 11vw;}
 .button1 a, .button2 a, .navbar a {
     text-decoration: none;
     display: inline-block;
-    margin: 0.22rem;
+    margin: 0.35rem;
     border: solid 3px;
     border-radius: 2em;
     transition: all 0.125s ease-in;
@@ -68,9 +68,9 @@ div {padding: 0 11vw;}
     color: #000
 }
 .navbar a {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     letter-spacing: 0.18em;
-    padding: 0 22px 0 27px;
+    padding: 0 25px 0 30px;
 }
 
 .covers {height: 250px;}
