@@ -9,6 +9,7 @@ body, html {
     font-size: 1.2rem;
     margin: 0;
     background-color: #000;
+    padding-bottom: 5rem; /* Adjust this value as needed */
 }
 
 div {padding: 0 11vw;}
@@ -31,6 +32,19 @@ div {padding: 0 11vw;}
 .logo:hover {
     width: 54.5vh;
     transition: all 0.3s ease-in;
+}
+
+.bear5 {
+    position: absolute;
+    margin: auto;
+    width: 4vh;
+    opacity: 10%;
+    transition: all 1.5s ease-out;
+}
+
+.bear5:hover {
+    opacity: 100%;
+    transition: all 1.5s ease-in;
 }
 
 .midii {
@@ -81,7 +95,6 @@ div {padding: 0 11vw;}
     right: 20px;
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 20px;
     z-index: 1000;
@@ -103,6 +116,16 @@ div {padding: 0 11vw;}
 
 #mute-button.muted #volume-icon {
     fill: #FF0000; /* Muted color */
+}
+
+footer {
+    color: #C8FF00;
+    text-align: center;
+    width: 100%;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: -90%;
+    left: 0;
 }
 
 ::-webkit-scrollbar {
