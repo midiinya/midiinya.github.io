@@ -17,14 +17,58 @@ function hideStartHash() {
   window.addEventListener("hashchange", hideStartHash);
 
   document.addEventListener("DOMContentLoaded", function() {
+    const volumeSlider = document.getElementById("volume-slider");
+    const playPauseButton = document.getElementById("mute-button");
+    const volumeIcon = document.getElementById("volume-icon");
+    let audio = new Audio('assets/insight.mp3');
+    audio.loop = true;
+
+    volumeSlider.addEventListener("input", function() {
+        audio.volume = this.value;
+        if (audio.paused) {
+            audio.play();
+            updatePlayPauseIcon(false);
+        }
+        updateVolumeIcon();
+    });
+
+    playPauseButton.addEventListener("click", function() {
+        if (audio.paused) {
+            audio.play();
+            updatePlayPauseIcon(false);
+        } else {
+            audio.pause();
+            updatePlayPauseIcon(true);
+        }
+    });
+
+    function updateVolumeIcon() {
+        if (audio.volume === 0) {
+            volumeIcon.style.fill = '#FF0000';
+        } else if (audio.volume < 0.5) {
+            volumeIcon.style.fill = '#FFA500';
+        } else {
+            volumeIcon.style.fill = '#C8FF00';
+        }
+    }
+
+    function updatePlayPauseIcon(isPaused) {
+        if (isPaused) {
+            volumeIcon.src = "assets/play.svg";
+        } else {
+            volumeIcon.src = "assets/pause.svg";
+        }
+    }
+
+    // Update logo click event
     var logo = document.querySelector(".logo");
-    var audioPlayer = document.getElementById("audioPlayer");
     var hasPlayed = false;
 
     logo.addEventListener("click", function() {
         if (!hasPlayed) {
-            audioPlayer.play();
+            audio.play();
             hasPlayed = true;
+            updatePlayPauseIcon(false);
         }
     });
 });

@@ -75,6 +75,36 @@ div {padding: 0 11vw;}
 
 .covers {height: 250px;}
 
+#volume-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 20px;
+    z-index: 1000;
+}
+
+#mute-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#volume-icon {
+    width: 24px;
+    height: 24px;
+    fill: #C8FF00; /* Default color */
+    transition: fill 0.3s ease;
+}
+
+#mute-button.muted #volume-icon {
+    fill: #FF0000; /* Muted color */
+}
+
 ::-webkit-scrollbar {
     width: 6px;
     background-color: #000;
