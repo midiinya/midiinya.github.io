@@ -9,7 +9,6 @@ body, html {
     font-size: 1.2rem;
     margin: 0;
     background-color: #000;
-    padding-bottom: 5rem; /* Adjust this value as needed */
 }
 
 div {padding: 0 11vw;}
@@ -62,8 +61,9 @@ div {padding: 0 11vw;}
 
 .button1 a, .button2 a, .navbar a {
     text-decoration: none;
+    padding: 0 1vh;
     display: inline-block;
-    margin: 0.35rem;
+    margin: 0.3rem;
     border: solid 3px;
     border-radius: 2em;
     transition: all 0.125s ease-in;
