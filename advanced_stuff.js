@@ -4,6 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const defaultSection = document.querySelector(hash);
     defaultSection?.scrollIntoView();
+
+    // Add scroll lock when on start screen
+    function handleScroll() {
+        if (window.location.hash === "#start" || !window.location.hash) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Initial check
+    handleScroll();
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleScroll);
 });
 
 function hideStartHash() {
