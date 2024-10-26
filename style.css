@@ -148,6 +148,7 @@ a[id="start"]:target ~ #start,
 a[id="about"]:target ~ #about,
 a[id="links"]:target ~ #links,
 a[id="music"]:target ~ #music,
+a[id="business"]:target ~ #business,
 a[id="edt"]:target ~ #edt,
 a[id="bear5"]:target ~ #bear5,
 a[id="merch"]:target ~ #merch {
