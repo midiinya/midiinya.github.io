@@ -55,7 +55,7 @@ in {padding: 0 3vh;}
 
 .bear5 {
     position: absolute;
-    bottom: -65vh;
+    bottom: -90vh;
     width: 4vh;
     opacity: 0.1;
     transition: opacity 1.5s ease-in-out;
