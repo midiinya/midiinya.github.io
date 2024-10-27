@@ -5,11 +5,11 @@
     font-display: swap;
 }
 
-body, html {
+body {
     font-family: "Baloo";
     font-size: 1.2rem;
     margin: 0;
-    background-color: #000;
+    background-color: black;
 }
 
 div {padding: 0 11vw;}
@@ -19,85 +19,18 @@ div {padding: 0 11vw;}
 section {
     height: 100vh;
     width: 100vw;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.1s;
+    display: none;
+    transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1);
 }
 
-a[id="start"]:target ~ #start,
-a[id="about"]:target ~ #about,
-a[id="links"]:target ~ #links,
-a[id="music"]:target ~ #music,
-a[id="business"]:target ~ #business,
-a[id="edt"]:target ~ #edt,
-a[id="bear5"]:target ~ #bear5,
-a[id="merch"]:target ~ #merch {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
+section:target {
+    display: block;
+    transition: all 0.45s cubic-bezier(0, 0, 0.21, 1);
 }
 
 #bear5 * {color: #0081DE;}
 
 in {padding: 0 3vh;}
-
-/* ---------------------------------------------- */
-
-/* ------------- interaction stuff -------------- */
-.button1, .button2, .navbar {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.button1 a, .button2 a, .navbar a {
-    text-decoration: none;
-    padding: 0 1vh;
-    display: inline-block;
-    margin: 0.3rem;
-    border: solid 3px;
-    border-radius: 2em;
-    transition: all 0.125s ease-in;
-}
-
-.button1 a:hover, .button2 a:hover, .navbar a:hover {
-    transform: scale(1.05);
-}
-
-.button1 a {font-size: 1.5rem;}
-
-.button2 a {
-    background-color: #C8FF00;
-    font-size: 1.5rem;
-    border: none;
-    color: #000
-}
-.navbar a {
-    font-size: 1.85rem;
-    letter-spacing: 0.18em;
-    padding: 0 25px 0 30px;
-}
-
-.rotateL {
-    rotate: 0;
-    transition: all 0.4s ease-out;
-}
-
-.rotateL :hover {
-    rotate: -10deg;
-    transition: all 0.3s ease-in;
-}
-
-.rotateR {
-    rotate: 0;
-    transition: all 0.4s ease-out;
-}
-
-.rotateR :hover {
-    rotate: -10deg;
-    transition: all 0.3s ease-in;
-}
 /* ---------------------------------------------- */
 
 /* -------------- Site asset stuff -------------- */
@@ -106,35 +39,31 @@ in {padding: 0 3vh;}
     inset: 0;
     margin: auto;
     width: 53vh;
-    transition: all 0.4s ease-out;
+    transition: width 0.4s ease-out;
 }
 
 .logo:hover {
     width: 54.5vh;
-    transition: all 0.3s ease-in;
 }
 
 .midii {
     letter-spacing: 0.6vh;
     font-size: 5.2vh;
     text-align: center;
-    margin:  4vh 0 1vh;
+    margin: 4vh 0 1vh;
 }
 
 .bear5 {
     position: absolute;
-    margin: auto;
+    bottom: -65vh;
     width: 4vh;
     opacity: 0.1;
-    transition: all 1.5s ease-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.bear5:hover {
-    opacity: 1;
-    transition: all 1.5s ease-in;
-}
+.bear5:hover {opacity: 1;}
 
-.covers {
+.cover {
     height: 320px;
     padding: 1%;
 }
@@ -151,6 +80,49 @@ footer {
     background-color: #000;
     border-radius: 2px;
 }
+/* ---------------------------------------------- */
+
+/* ------------- interaction stuff -------------- */
+.button1, .button2, .navbar {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.button1 a, .button2 a, .navbar a {
+    text-decoration: none;
+    padding: 0 1vh;
+    display: inline-block;
+    margin: 0.3rem;
+    border: solid 3px;
+    border-radius: 2em;
+    transition: all 0.125s ease;
+}
+
+.button1 a, .button2 a {font-size: 1.5rem;}
+
+.button1 a:hover, .button2 a:hover, .navbar a:hover {transform: scale(1.05);}
+
+.button2 a {
+    background-color: #C8FF00;
+    color: #000;
+    border: none;
+}
+
+.navbar a {
+    font-size: 1.85rem;
+    letter-spacing: 0.18em;
+    padding: 0 25px 0 30px;
+}
+
+.rotateL, .rotateR {
+    rotate: 0;  
+    transition: rotate 0.125s ease-in-out
+}
+
+.rotateL:hover {rotate: -2deg;}
+
+.rotateR:hover {rotate: 2deg;}
 /* ---------------------------------------------- */
 
 /* ------------ Player related stuff ------------ */
@@ -182,7 +154,7 @@ footer {
 
 /* ------------ device scaling stuff ------------ */
 @media screen and (max-width: 1760px) {
-    body, html {font-size: 1.05rem;}
+    body {font-size: 1.05rem;}
 
     .midii {font-size: 3.8vh;}
 
@@ -190,7 +162,7 @@ footer {
 }
 
 @media screen and (max-width: 980px) {
-    body, html {font-size: 0.9rem;}
+    body {font-size: 0.9rem;}
 
     .logo {width: 40vw;}
 
@@ -199,7 +171,6 @@ footer {
     .midii {font-size: 3.2vh;}
 
     .navbar a {
-        margin: 0.3rem;
         font-size: 1.4rem;
         border-radius: 1em;
     }
@@ -218,7 +189,7 @@ footer {
 
     .navbar a {
         padding: 0;
-        width: 70vw;
+        width: 90vw;
         border-radius: 1.5em;
     }
 }
