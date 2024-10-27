@@ -5,22 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const defaultSection = document.querySelector(hash);
     defaultSection?.scrollIntoView();
 
-    // Add scroll lock when on start screen
     function handleScroll() {
-        if (window.location.hash === "#start" || !window.location.hash) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+        document.body.style.overflow = 
+            (window.location.hash === "#start" || !window.location.hash) 
+                ? 'hidden' 
+                : 'auto';
     }
-
-    // Initial check
-    handleScroll();
-    
-    // Listen for hash changes
     window.addEventListener('hashchange', handleScroll);
+    
+    handleScroll();
 });
-
+    
 function hideStartHash() {
     if (window.location.hash === "#start") {
       history.replaceState(null, null, window.location.href.split('#')[0]);
@@ -35,11 +30,19 @@ function hideStartHash() {
     const volumeSlider = document.getElementById("volume-slider");
     const playPauseButton = document.getElementById("mute-button");
     const volumeIcon = document.getElementById("volume-icon");
-    let audio = new Audio('assets/insight.mp3');
+    const audio = new Audio('assets/insight.mp3');
     audio.loop = true;
 
-    volumeSlider.addEventListener("input", function() {
-        audio.volume = this.value;
+    const updateVolumeIcon = () => {
+        volumeIcon.style.fill = audio.volume === 0 ? '#FF0000' : audio.volume < 0.5 ? '#FFA500' : '#C8FF00';
+    };
+
+    const updatePlayPauseIcon = (isPaused) => {
+        volumeIcon.src = `assets/${isPaused ? 'play' : 'pause'}.svg`;
+    };
+
+    volumeSlider.addEventListener("input", () => {
+        audio.volume = volumeSlider.value;
         if (audio.paused) {
             audio.play();
             updatePlayPauseIcon(false);
@@ -47,39 +50,13 @@ function hideStartHash() {
         updateVolumeIcon();
     });
 
-    playPauseButton.addEventListener("click", function() {
-        if (audio.paused) {
-            audio.play();
-            updatePlayPauseIcon(false);
-        } else {
-            audio.pause();
-            updatePlayPauseIcon(true);
-        }
+    playPauseButton.addEventListener("click", () => {
+        audio.paused ? audio.play() : audio.pause();
+        updatePlayPauseIcon(audio.paused);
     });
 
-    function updateVolumeIcon() {
-        if (audio.volume === 0) {
-            volumeIcon.style.fill = '#FF0000';
-        } else if (audio.volume < 0.5) {
-            volumeIcon.style.fill = '#FFA500';
-        } else {
-            volumeIcon.style.fill = '#C8FF00';
-        }
-    }
-
-    function updatePlayPauseIcon(isPaused) {
-        if (isPaused) {
-            volumeIcon.src = "assets/play.svg";
-        } else {
-            volumeIcon.src = "assets/pause.svg";
-        }
-    }
-
-    // Update logo click event
-    var logo = document.querySelector(".logo");
-    var hasPlayed = false;
-
-    logo.addEventListener("click", function() {
+    let hasPlayed = false;
+    document.querySelector(".logo").addEventListener("click", () => {
         if (!hasPlayed) {
             audio.play();
             hasPlayed = true;

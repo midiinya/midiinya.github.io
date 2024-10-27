@@ -1,6 +1,7 @@
+/* --------------- Web page stuff --------------- */
 @font-face {
     font-family: "Baloo";
-    src: url('assets/Baloo-Regular.ttf');
+    src: url('assets/Baloo-Regular.woff2');
     font-display: swap;
 }
 
@@ -15,44 +16,35 @@ div {padding: 0 11vw;}
 
 * {color: #C8FF00;}
 
+section {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.1s;
+}
+
+a[id="start"]:target ~ #start,
+a[id="about"]:target ~ #about,
+a[id="links"]:target ~ #links,
+a[id="music"]:target ~ #music,
+a[id="business"]:target ~ #business,
+a[id="edt"]:target ~ #edt,
+a[id="bear5"]:target ~ #bear5,
+a[id="merch"]:target ~ #merch {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
+}
+
 #bear5 * {color: #0081DE;}
 
-.logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 53vh;
-    transition: all 0.4s ease-out;
-}
+in {padding: 0 3vh;}
 
-.logo:hover {
-    width: 54.5vh;
-    transition: all 0.3s ease-in;
-}
+/* ---------------------------------------------- */
 
-.bear5 {
-    position: absolute;
-    margin: auto;
-    width: 4vh;
-    opacity: 10%;
-    transition: all 1.5s ease-out;
-}
-
-.bear5:hover {
-    opacity: 100%;
-    transition: all 1.5s ease-in;
-}
-
-.midii {
-    letter-spacing: 0.6vh;
-    font-size: 5.2vh;
-    text-align: center;
-    margin:  4vh 0 1vh;
-}
-
+/* ------------- interaction stuff -------------- */
 .button1, .button2, .navbar {
     text-align: center;
     margin: 0;
@@ -87,8 +79,81 @@ div {padding: 0 11vw;}
     padding: 0 25px 0 30px;
 }
 
-.covers {height: 250px;}
+.rotateL {
+    rotate: 0;
+    transition: all 0.4s ease-out;
+}
 
+.rotateL :hover {
+    rotate: -10deg;
+    transition: all 0.3s ease-in;
+}
+
+.rotateR {
+    rotate: 0;
+    transition: all 0.4s ease-out;
+}
+
+.rotateR :hover {
+    rotate: -10deg;
+    transition: all 0.3s ease-in;
+}
+/* ---------------------------------------------- */
+
+/* -------------- Site asset stuff -------------- */
+.logo {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 53vh;
+    transition: all 0.4s ease-out;
+}
+
+.logo:hover {
+    width: 54.5vh;
+    transition: all 0.3s ease-in;
+}
+
+.midii {
+    letter-spacing: 0.6vh;
+    font-size: 5.2vh;
+    text-align: center;
+    margin:  4vh 0 1vh;
+}
+
+.bear5 {
+    position: absolute;
+    margin: auto;
+    width: 4vh;
+    opacity: 0.1;
+    transition: all 1.5s ease-out;
+}
+
+.bear5:hover {
+    opacity: 1;
+    transition: all 1.5s ease-in;
+}
+
+.covers {
+    height: 320px;
+    padding: 1%;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -90%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #000;
+    border-radius: 2px;
+}
+/* ---------------------------------------------- */
+
+/* ------------ Player related stuff ------------ */
 #volume-control {
     position: fixed;
     bottom: 20px;
@@ -110,53 +175,12 @@ div {padding: 0 11vw;}
 #volume-icon {
     width: 24px;
     height: 24px;
-    fill: #C8FF00; /* Default color */
+    fill: #C8FF00;
     transition: fill 0.3s ease;
 }
+/* ---------------------------------------------- */
 
-#mute-button.muted #volume-icon {
-    fill: #FF0000; /* Muted color */
-}
-
-footer {
-    color: #C8FF00;
-    text-align: center;
-    width: 100%;
-    font-size: 0.9rem;
-    position: absolute;
-    bottom: -90%;
-    left: 0;
-}
-
-::-webkit-scrollbar {
-    width: 6px;
-    background-color: #000;
-}
-
-::-webkit-scrollbar-thumb {border-radius: 2px;}
-
-section {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1), visibility 0s 0.1s;
-}
-
-a[id="start"]:target ~ #start,
-a[id="about"]:target ~ #about,
-a[id="links"]:target ~ #links,
-a[id="music"]:target ~ #music,
-a[id="business"]:target ~ #business,
-a[id="edt"]:target ~ #edt,
-a[id="bear5"]:target ~ #bear5,
-a[id="merch"]:target ~ #merch {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1), visibility 0s;
-}
-
+/* ------------ device scaling stuff ------------ */
 @media screen and (max-width: 1760px) {
     body, html {font-size: 1.05rem;}
 
@@ -198,3 +222,4 @@ a[id="merch"]:target ~ #merch {
         border-radius: 1.5em;
     }
 }
+/* ---------------------------------------------- */
