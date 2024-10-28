@@ -12,6 +12,12 @@ body {
     background-color: black;
 }
 
+#bear5 * {
+    color: #0081DE;
+}
+
+.in {text-indent: 2em;}
+
 div {padding: 0 11vw;}
 
 * {color: #C8FF00;}
@@ -28,10 +34,6 @@ section:target {
     z-index: 1;
     transition: all 0.45s cubic-bezier(0, 0, 0.21, 1);
 }
-
-#bear5 * {color: #0081DE;}
-
-in {padding: 0 3vh;}
 /* ---------------------------------------------- */
 
 /* -------------- Site asset stuff -------------- */
@@ -43,9 +45,7 @@ in {padding: 0 3vh;}
     transition: width 0.4s ease-out;
 }
 
-.logo:hover {
-    width: 54.5vh;
-}
+.logo:hover {width: 54.5vh;}
 
 .midii {
     letter-spacing: 0.6vh;
@@ -55,11 +55,9 @@ in {padding: 0 3vh;}
 }
 
 .bear5 {
-    position: absolute;
-    bottom: -90vh;
-    width: 4vh;
+    width: 38px;
     opacity: 0.1;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 3s ease-in-out;
 }
 
 .bear5:hover {opacity: 1;}
@@ -72,13 +70,13 @@ in {padding: 0 3vh;}
 footer {
     text-align: center;
     width: 100%;
-    position: absolute;
-    bottom: -90%;
+    display: inline-block;
+    top: 90%;
 }
 
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: #000;
+    background-color: black;
     border-radius: 2px;
 }
 /* ---------------------------------------------- */
@@ -93,8 +91,9 @@ footer {
 .button1 a, .button2 a, .navbar a {
     text-decoration: none;
     padding: 0 1vh;
-    display: inline-block;
-    margin: 0.3rem;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0.2rem;
     border: solid 3px;
     border-radius: 2em;
     transition: all 0.125s ease;
@@ -190,7 +189,7 @@ footer {
 
     .navbar a {
         padding: 0;
-        width: 90vw;
+        width: 75vw;
         border-radius: 1.5em;
     }
 }
