@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("hashchange", () => handleNavigation(window.location.hash || "#start"));
 });
 
-
 window.addEventListener("load", () => {
     const volumeSlider = document.getElementById("volume-slider");
     const playPauseButton = document.getElementById("mute-button");

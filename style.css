@@ -25,6 +25,7 @@ section {
 
 section:target {
     display: block;
+    z-index: 1;
     transition: all 0.45s cubic-bezier(0, 0, 0.21, 1);
 }
 
