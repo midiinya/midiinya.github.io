@@ -38,7 +38,7 @@ section:target {
 
 /* -------------- Site asset stuff -------------- */
 .logo {
-    position: absolute;
+    position: fixed;
     inset: 0;
     margin: auto;
     width: 53vh;
