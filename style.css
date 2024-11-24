@@ -23,8 +23,8 @@ div {padding: 0 11vw;}
 * {color: #C8FF00;}
 
 section {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: none;
     transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1);
 }
@@ -58,6 +58,8 @@ section:target {
     width: 38px;
     opacity: 0.1;
     transition: opacity 3s ease-in-out;
+    position: relative;
+    margin-top: 100%;
 }
 
 .bear5:hover {opacity: 1;}
