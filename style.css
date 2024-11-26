@@ -10,7 +10,6 @@ body {
     font-size: 1.2rem;
     margin: 0;
     background-color: black;
-    background-color: black;
     animation: fadeIn 1s forwards;
 }
 
@@ -28,6 +27,11 @@ body {
 div {padding: 0 11vw;}
 
 * {color: #C8FF00;}
+
+a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
 
 section {
     height: 100%;
@@ -187,8 +191,6 @@ footer {
 
 @media screen and (max-width: 768px) {
     .midii {font-size: 4.3vh;}
-
-    .navbar a {font-size: 1.6rem;}
 }
 
 @media screen and (max-width: 480px) {
