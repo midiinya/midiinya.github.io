@@ -10,6 +10,13 @@ body {
     font-size: 1.2rem;
     margin: 0;
     background-color: black;
+    background-color: black;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 #bear5 * {
@@ -41,11 +48,11 @@ section:target {
     position: fixed;
     inset: 0;
     margin: auto;
-    width: 53vh;
+    width: 38vh;
     transition: width 0.4s ease-out;
 }
 
-.logo:hover {width: 54.5vh;}
+.logo:hover {width: 39vh;}
 
 .midii {
     letter-spacing: 0.6vh;
@@ -166,9 +173,9 @@ footer {
 @media screen and (max-width: 980px) {
     body {font-size: 0.9rem;}
 
-    .logo {width: 40vw;}
+    .logo {width: 30vh;}
 
-    .logo:hover {width: 42vw;}
+    .logo:hover {width: 31vh;}
 
     .midii {font-size: 3.2vh;}
 
@@ -185,9 +192,9 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    .logo {width: 53vw;}
+    .logo {width: 65vw;}
 
-    .logo:hover {width: 54.5vw;}
+    .logo:hover {width: 66vw;}
 
     .navbar a {
         padding: 0;
