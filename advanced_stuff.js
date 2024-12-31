@@ -4,17 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.loop = true;
 
   const showSection = hash => {
-      const targetId = hash?.length > 1 ? hash : "#start";
-      sections.forEach(section => {
-          const isVisible = `#${section.id}` === targetId;
-          section.style.display = isVisible ? "block" : "none";
-          section.style.opacity = 0;
-          isVisible && setTimeout(() => section.style.opacity = "1", 10);
-      });
-      
-      document.body.style.overflow = targetId === "#start" ? "hidden" : "auto";
-      history.replaceState(null, "", targetId === "#start" ? "" : targetId);
-  };
+    const targetId = hash?.length > 1 ? hash : "#start";
+    sections.forEach(section => {
+        const isVisible = `#${section.id}` === targetId;
+        section.style.display = isVisible ? "block" : "none";
+        section.style.opacity = 0;
+        isVisible && setTimeout(() => section.style.opacity = "1", 10);
+    });
+    
+    document.body.style.overflow = targetId === "#start" ? "hidden" : "auto";
+    targetId === "#start" && history.replaceState(null, "", location.pathname);
+};
 
   const setupAudio = () => {
       const volumeSlider = document.getElementById("volume-slider");

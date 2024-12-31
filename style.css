@@ -154,9 +154,9 @@ footer {
 #volume-control {
     position: fixed;
     bottom: 0;
-    right: -7vw;
+    right: -6vw;
     display: flex;
-    padding: 1.5vh;
+    padding: 2.5vh;
     z-index: 10;
 }
 
