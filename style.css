@@ -8,7 +8,7 @@
 body {
     font-family: "Baloo";
     font-size: 1.2rem;
-    margin: 0;
+    margin-inline: 11vw;
     background-color: black;
     animation: fadeIn 1s forwards;
 }
@@ -18,15 +18,13 @@ body {
     to { opacity: 1; }
 }
 
-#bear5 * {
-    color: #0081DE;
-}
+* {color: #C8FF00;}
+
+#bear5 * {color: #0081DE;}
 
 .in {text-indent: 2em;}
 
-div {padding: 0 11vw;}
-
-* {color: #C8FF00;}
+div {margin-inline: 6vw;}
 
 a {
     user-select: none;
@@ -34,9 +32,9 @@ a {
 }
 
 section {
+    display: none;
     height: 100%;
     width: 100%;
-    display: none;
     transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1);
 }
 
@@ -53,7 +51,7 @@ section:target {
     inset: 0;
     margin: auto;
     width: 38vh;
-    transition: width 0.4s ease-out;
+    transition: width 0.4s ease-in-out;
 }
 
 .logo:hover {width: 39vh;}
@@ -68,23 +66,30 @@ section:target {
 .bear5 {
     width: 38px;
     opacity: 0.1;
-    transition: opacity 3s ease-in-out;
     position: relative;
     margin-top: 100%;
+    transition: opacity 3s ease-in-out;
 }
 
 .bear5:hover {opacity: 1;}
 
+.cover-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 32ch);
+    gap: 2ch;
+    justify-content: center;
+    text-align: center;
+}
+
 .cover {
-    height: 320px;
-    padding: 1%;
+    max-width: 32ch;
 }
 
 footer {
+    display: inline-block;
     text-align: center;
     width: 100%;
-    display: inline-block;
-    top: 90%;
+    bottom: 0;
 }
 
 ::-webkit-scrollbar {
@@ -95,31 +100,33 @@ footer {
 /* ---------------------------------------------- */
 
 /* ------------- interaction stuff -------------- */
-.button1, .button2, .navbar {
+[class^="button"], .navbar {
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-.button1 a, .button2 a, .navbar a {
+[class^="button"] a, .navbar a {
     text-decoration: none;
-    padding: 0 1vh;
     display: inline-flex;
     justify-content: center;
+    padding: 0 1vh;
     margin: 0.2rem;
-    border: solid 3px;
     border-radius: 2em;
-    transition: all 0.125s ease;
+    font-size: 1.5rem;
+    transition: transform 0.125s ease;
 }
 
-.button1 a, .button2 a {font-size: 1.5rem;}
+/* Shared hover effect */
+[class^="button"] a:hover, .navbar a:hover {transform: scale(1.05);}
 
-.button1 a:hover, .button2 a:hover, .navbar a:hover {transform: scale(1.05);}
+/* Specific button styles */
+.button1 a, .navbar a {border: solid 3px;}
 
 .button2 a {
+    font-size: 1.6em;
     background-color: #C8FF00;
     color: #000;
-    border: none;
 }
 
 .navbar a {
@@ -128,9 +135,14 @@ footer {
     padding: 0 25px 0 30px;
 }
 
+.button2 img {
+    width: 1em;
+    margin-right: 0.25em;
+}
+
 .rotateL, .rotateR {
     rotate: 0;  
-    transition: rotate 0.125s ease-in-out
+    transition: rotate 0.125s ease-in-out;
 }
 
 .rotateL:hover {rotate: -2deg;}
@@ -141,28 +153,20 @@ footer {
 /* ------------ Player related stuff ------------ */
 #volume-control {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 0;
+    right: -7vw;
     display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-    z-index: 1000;
+    padding: 1.5vh;
+    z-index: 10;
 }
 
-#mute-button {
+#volume-button {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
 }
 
-#volume-icon {
-    width: 24px;
-    height: 24px;
-    fill: #C8FF00;
-    transition: fill 0.3s ease;
-}
+#volume-icon {width: 24px;}
 /* ---------------------------------------------- */
 
 /* ------------ device scaling stuff ------------ */
@@ -177,9 +181,9 @@ footer {
 @media screen and (max-width: 980px) {
     body {font-size: 0.9rem;}
 
-    .logo {width: 30vh;}
+    .logo {width: 28vh;}
 
-    .logo:hover {width: 31vh;}
+    .logo:hover {width: 29vh;}
 
     .midii {font-size: 3.2vh;}
 
@@ -191,16 +195,18 @@ footer {
 
 @media screen and (max-width: 768px) {
     .midii {font-size: 4.3vh;}
+    
+    .cover-grid {grid-template-columns: 1fr;}
 }
 
 @media screen and (max-width: 480px) {
-    .logo {width: 65vw;}
+    .logo {width: 20vh;}
 
-    .logo:hover {width: 66vw;}
+    .logo:hover {width: 21vh;}
 
     .navbar a {
         padding: 0;
-        width: 75vw;
+        width: 100%;
         border-radius: 1.5em;
     }
 }
