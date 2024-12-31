@@ -1,65 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
-    let currentSectionId = window.location.hash || "#start";
-
-    const updateSections = () => {
-        sections.forEach(section => {
-            const isVisible = `#${section.id}` === currentSectionId;
-            section.style.display = isVisible ? "block" : "none";
-            if (isVisible) {
-                setTimeout(() => {
-                    section.style.opacity = "1";
-                    window.scrollTo(0, 0);
-                }, 10);
-            } else {
-                section.style.opacity = "0";
-            }
-        });
-        document.body.style.overflow = (currentSectionId === "#start") ? 'hidden' : 'auto';
-    };
-
-    const handleNavigation = (hash) => {
-        if (hash === currentSectionId) return;
-        currentSectionId = hash;
-        history.replaceState(null, null, currentSectionId === "#start" ? ' ' : currentSectionId);
-        updateSections();
-    };
-
-    updateSections();
-    window.addEventListener("hashchange", () => handleNavigation(window.location.hash || "#start"));
-});
-
-window.addEventListener("load", () => {
-    const volumeSlider = document.getElementById("volume-slider");
-    const playPauseButton = document.getElementById("mute-button");
-    const volumeIcon = document.getElementById("volume-icon");
-    const audio = new Audio("assets/insight.mp3");
+    const audio = new Audio("assets/insight.mp3");  
     audio.loop = true;
 
-    const updateIcons = () => {
-        volumeIcon.style.fill = audio.volume === 0 ? "#FF0000" : audio.volume < 0.5 ? "#FFA500" : "#C8FF00";
-        volumeIcon.src = `assets/${audio.paused ? "play" : "pause"}.svg`;
+    const showSection = hash => {
+        const targetId = hash?.length > 1 ? hash : "#start";
+        sections.forEach(section => {
+            const isVisible = `#${section.id}` === targetId;
+            section.style.display = isVisible ? "block" : "none";
+            section.style.opacity = 0;
+            isVisible && setTimeout(() => section.style.opacity = "1", 10);
+        });
+        
+        document.body.style.overflow = targetId === "#start" ? "hidden" : "auto";
+        history.replaceState(null, "", targetId === "#start" ? "" : targetId);
     };
 
-    volumeSlider.addEventListener("input", () => {
-        audio.volume = volumeSlider.value;
-        if (audio.paused) audio.play();
-        updateIcons();
-    });
+    const setupAudio = () => {
+        const volumeSlider = document.getElementById("volume-slider");
+        const volumeIcon = document.getElementById("volume-icon");
+        const volumeButton = document.getElementById("volume-button");
+        
+        const toggleAudio = (play = true) => {
+            play ? audio.play() : audio.pause();
+            volumeIcon.src = `assets/${audio.paused ? "play" : "pause"}.svg`;
+        };
+        
+        volumeSlider.addEventListener("input", () => {
+            audio.volume = volumeSlider.value;
+            if (audio.paused) toggleAudio();
+        });
+        
+        volumeButton.addEventListener("click", () => toggleAudio(audio.paused));
+        
+        document.querySelector(".logo").addEventListener("click", function init() {
+            toggleAudio();
+            this.removeEventListener("click", init);
+        });
+    };
 
-    playPauseButton.addEventListener("click", () => {
-        audio.paused ? audio.play() : audio.pause();
-        updateIcons();
-    });
-
-    let hasPlayed = false;
-    document.querySelector(".logo").addEventListener("click", () => {
-        if (!hasPlayed) {
-            audio.play();
-            hasPlayed = true;
-            updateIcons();
+    document.addEventListener("click", e => {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) {
+            e.preventDefault();
+            location.hash = link.hash;
+            scrollTo(0, 0);
         }
     });
+<<<<<<< HEAD
+
+    window.addEventListener("hashchange", () => showSection(location.hash));
+    
+    showSection(location.hash);
+    setupAudio();
+});
+=======
 });
 
 /* ----------------------Seperator------------------------ */
@@ -251,3 +246,4 @@ window.addEventListener("load", () => {
  function setResetFlag(e) {
    resetPosition = true;
  }
+>>>>>>> eebf4e8f39c42727f5de661a4fbdac6df880bcb3
