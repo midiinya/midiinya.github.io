@@ -8,7 +8,7 @@
 body {
     font-family: "Baloo";
     font-size: 1.2rem;
-    margin-inline: 0; /* Needs fixing, causes issues with sections, specifically bear5 and start */
+    margin-inline: 11vw; /* Needs fixing, causes issues with sections, specifically bear5 and start */
     background-color: black;
     animation: fadeIn 1s forwards;
 }
