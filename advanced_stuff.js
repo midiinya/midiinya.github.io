@@ -3,8 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = new Audio("assets/insight.mp3");  
   audio.loop = true;
 
-  const hideName = hash => {
+  const showSection = hash => {
     const targetId = hash?.length > 1 ? hash : "#start";
+    sections.forEach(section => {
+        const isVisible = `#${section.id}` === targetId;
+        section.style.display = isVisible ? "block" : "none";
+        section.style.opacity = 0;
+        isVisible && setTimeout(() => section.style.opacity = "1", 10);
+    });
+    
     document.body.style.overflow = targetId === "#start" ? "hidden" : "auto";
     targetId === "#start" && history.replaceState(null, "", location.pathname);
 };
@@ -37,12 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (link) {
           e.preventDefault();
           location.hash = link.hash;
-          scrollTo({top:0});
+          scrollTo(0, 0);
       }
   });
 
-  window.addEventListener("hashchange", () => hideName(location.hash));
+  window.addEventListener("hashchange", () => showSection(location.hash));
   
-  hideName(location.hash);
+  showSection(location.hash);
   setupAudio();
 });

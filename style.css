@@ -1,21 +1,21 @@
 /* --------------- Web page stuff --------------- */
 @font-face {
-font-family: "Baloo";
-src: url('assets/Baloo-Regular.woff2');
-font-display: swap;
+    font-family: "Baloo";
+    src: url('assets/Baloo-Regular.woff2');
+    font-display: swap;
 }
 
 body {
-font-family: "Baloo";
-font-size: 1.2rem;
-margin: auto;
-background-color: black;
-animation: fadeIn 1s forwards;
+    font-family: "Baloo";
+    font-size: 1.2rem;
+    margin-inline: 11vw; /* Needs fixing, causes issues with sections, specifically bear5 and start */
+    background-color: black;
+    animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 * {color: #C8FF00;}
@@ -27,35 +27,33 @@ to { opacity: 1; }
 div {margin-inline: 6vw;}
 
 a {
-user-select: none;
--webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 section {
-overflow: hidden;
-height: 0;
-opacity: 0;
-z-index: 0;
-transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1);
+    display: none;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.1s cubic-bezier(0, 0, 0.21, 1);
 }
+
 section:target {
-position: relative;
-height: 100%;
-width: 100%;
-z-index: 1;
-opacity: 1;
-transition: opacity 0.45s cubic-bezier(0, 0, 0.21, 1);
+    display: block;
+    z-index: 1;
+    transition: all 0.45s cubic-bezier(0, 0, 0.21, 1);
 }
 /* ---------------------------------------------- */
 
 /* -------------- Site asset stuff -------------- */
 .logo {
-position: fixed;
-inset: 0;
-margin: auto;
-width: 38vh;
-transition: width 0.4s ease-in-out;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 38vh;
+    transition: width 0.4s ease-in-out;
 }
+
 .logo:hover {width: 39vh;}
 
 .midii {
@@ -66,55 +64,57 @@ transition: width 0.4s ease-in-out;
 }
 
 .bear5 {
-width: 38px;
-opacity: 0.1;
-position: relative;
-margin-top: 100%;
-transition: opacity 3s ease-in-out;
+    width: 38px;
+    opacity: 0.1;
+    position: relative;
+    margin-top: 100%;
+    transition: opacity 3s ease-in-out;
 }
+
 .bear5:hover {opacity: 1;}
 
 .cover-grid {
-display: grid;
-grid-template-columns: repeat(2, 32ch);
-gap: 2ch;
-justify-content: center;
-text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 32ch);
+    gap: 2ch;
+    justify-content: center;
+    text-align: center;
 }
 
 .cover {
-max-width: 32ch;
+    max-width: 32ch;
 }
 
 footer {
-display: inline-block;
-text-align: center;
-width: 100%;
-top: 90%;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    top: 90%;
 }
 
 ::-webkit-scrollbar {
-width: 6px;
-background-color: black;
-border-radius: 2px;
+    width: 6px;
+    background-color: black;
+    border-radius: 2px;
 }
 /* ---------------------------------------------- */
 
 /* ------------- interaction stuff -------------- */
 [class^="button"], .navbar {
-text-align: center;
-margin: 0;
-padding: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+
 [class^="button"] a, .navbar a {
-text-decoration: none;
-display: inline-flex;
-justify-content: center;
-padding: 0 1vh;
-margin: 0.2rem;
-border-radius: 2em;
-font-size: 1.5rem;
-transition: transform 0.125s ease;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0 1vh;
+    margin: 0.2rem;
+    border-radius: 2em;
+    font-size: 1.5rem;
+    transition: transform 0.125s ease;
 }
 
 /* Shared hover effect */
@@ -124,25 +124,25 @@ transition: transform 0.125s ease;
 .button1 a, .navbar a {border: solid 3px;}
 
 .button2 a {
-font-size: 1.6em;
-background-color: #C8FF00;
-color: #000;
+    font-size: 1.6em;
+    background-color: #C8FF00;
+    color: #000;
 }
 
 .navbar a {
-font-size: 1.85rem;
-letter-spacing: 0.18em;
-padding: 0 25px 0 30px;
+    font-size: 1.85rem;
+    letter-spacing: 0.18em;
+    padding: 0 25px 0 30px;
 }
 
 .button2 img {
-width: 1em;
-margin-right: 0.25em;
+    width: 1em;
+    margin-right: 0.25em;
 }
 
 .rotateL, .rotateR {
-rotate: 0;  
-transition: rotate 0.125s ease-in-out;
+    rotate: 0;  
+    transition: rotate 0.125s ease-in-out;
 }
 
 .rotateL:hover {rotate: -2deg;}
@@ -152,18 +152,18 @@ transition: rotate 0.125s ease-in-out;
 
 /* ------------ Player related stuff ------------ */
 #volume-control {
-position: fixed;
-bottom: 0;
-right: -6vw;
-display: flex;
-padding: 2.5vh;
-z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: -6vw;
+    display: flex;
+    padding: 2.5vh;
+    z-index: 10;
 }
 
 #volume-button {
-background: none;
-border: none;
-cursor: pointer;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 #volume-icon {width: 24px;}
@@ -171,11 +171,11 @@ cursor: pointer;
 
 /* ------------ device scaling stuff ------------ */
 @media screen and (max-width: 1760px) {
-body {font-size: 1.05rem;}
+    body {font-size: 1.05rem;}
 
-.midii {font-size: 3.8vh;}
+    .midii {font-size: 3.8vh;}
 
-.navbar a {font-size: 1.5125rem;}
+    .navbar a {font-size: 1.5125rem;}
 }
 
 @media screen and (max-width: 980px) {
@@ -188,15 +188,15 @@ body {font-size: 1.05rem;}
     .midii {font-size: 3.2vh;}
 
     .navbar a {
-    font-size: 1.4rem;
-    border-radius: 1em;
+        font-size: 1.4rem;
+        border-radius: 1em;
     }
 }
 
 @media screen and (max-width: 768px) {
-.midii {font-size: 4.3vh;}
+    .midii {font-size: 4.3vh;}
     
-.cover-grid {grid-template-columns: 1fr;}
+    .cover-grid {grid-template-columns: 1fr;}
 }
 
 @media screen and (max-width: 480px) {
@@ -205,9 +205,9 @@ body {font-size: 1.05rem;}
     .logo:hover {width: 21vh;}
 
     .navbar a {
-    padding: 0;
-    width: 100%;
-    border-radius: 1.5em;
+        padding: 0;
+        width: 100%;
+        border-radius: 1.5em;
     }
 }
 /* ---------------------------------------------- */
