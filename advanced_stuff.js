@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (link) {
           e.preventDefault();
           location.hash = link.hash;
-          scrollTo(0, 0);
+          scrollTo({top:0});
       }
   });
 
