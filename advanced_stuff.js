@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const toggleAudio = (play = true) => {
           play ? audio.play() : audio.pause();
-          volumeIcon.src = `assets/${audio.paused ? "play" : "pause"}.svg`;
+          volumeIcon.src = `assets/icons/${audio.paused ? "play" : "pause"}.svg`;
       };
       
       volumeSlider.addEventListener("input", () => {

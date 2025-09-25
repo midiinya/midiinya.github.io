@@ -1,16 +1,16 @@
 /* --------------- Web page stuff --------------- */
 @font-face {
 font-family: "Baloo";
-src: url('assets/Baloo-Regular.woff2');
+src: url('assets/other/Baloo-Regular.woff2');
 font-display: swap;
 }
 
 body {
+animation: fadeIn 1s forwards;
+margin-inline: 11vw;
 font-family: "Baloo";
 font-size: 1.2rem;
-margin-inline: 11vw;
 background-color: black;
-animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
