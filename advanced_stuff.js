@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
-  const audio = new Audio("assets/insight.mp3");  
+  const audio = new Audio("assets/other/insight.mp3");  
   audio.loop = true;
 
   const showSection = hash => {
